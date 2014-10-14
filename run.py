@@ -9,11 +9,11 @@ import sys
 if __name__ == "__main__":
 
     seqs = fasta_reader.read_input_file(sys.argv[1] if len(sys.argv) > 1 else "example.data.fasta")
-
+    klen = sys.argv[2]
     complete_kmer_list = []
 
     for dnaseq in seqs:
-        kmers = seq_splitter.get_kmers_from(dnaseq, klen=33)
+        kmers = seq_splitter.get_kmers_from(dnaseq, klen=int(klen))
         complete_kmer_list.extend(kmers)
 
     frequencies = defaultdict(int)
