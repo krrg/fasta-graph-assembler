@@ -1,3 +1,4 @@
+import seq_splitter
 
 def read_input_file(fastafile):
     with open(fastafile) as f:
@@ -17,6 +18,6 @@ def read_input_file(fastafile):
 
 
 if __name__ == "__main__":
-    print read_input_file("example.data.fasta")
+    sequences = read_input_file("example.data.fasta")
 
 
