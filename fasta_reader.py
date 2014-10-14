@@ -14,6 +14,8 @@ def read_input_file(fastafile):
                     single_read = []
             else:
                 single_read.append(line)
+        if len(single_read) > 0:
+            result.append("".join(single_read))
         return result
 
 
