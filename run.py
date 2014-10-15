@@ -6,22 +6,28 @@ from debruijn import DeBruijnGraph
 from collections import defaultdict
 import sys
 
-if __name__ == "__main__":
 
-    seqs = fasta_reader.read_input_file(sys.argv[1] if len(sys.argv) > 1 else "example.data.fasta")
-    klen = sys.argv[2]
-    complete_kmer_list = []
+def fasta_to_kmers(fasta_reads, klen):
+    result = []
+    for dnaseq in fasta_reads:
+        kmers = seq_splitter.get_kmers_from(dnaseq, klen)
+        result.extend(kmers)
+    return result
 
-    for dnaseq in seqs:
-        kmers = seq_splitter.get_kmers_from(dnaseq, klen=int(klen))
-        complete_kmer_list.extend(kmers)
 
+def get_frequent_kmers(kmerlist, minimum_freq):
     frequencies = defaultdict(int)
-
     for kmer in complete_kmer_list:
         frequencies[kmer] += 1
+    return filter(lambda key: frequencies[key] >= minimum_freq, frequencies.iterkeys())
 
-    supported_kmers = filter(lambda kmer: frequencies[kmer] > 1, frequencies.iterkeys())
+
+if __name__ == "__main__":
+
+    fasta_sequences = fasta_reader.read_input_file(sys.argv[1] if len(sys.argv) > 1 else "example.data.fasta")
+    klen = int(sys.argv[2])
+
+    complete_kmer_list = fasta_to_kmers(fasta_sequences, klen)
+    supported_kmers = get_frequent_kmers(complete_kmer_list, 2)
 
     print "\n".join(DeBruijnGraph(set(supported_kmers)).read_all_contigs())
-    #print "\n".join(sorted(DeBruijnGraph(seqs).read_all_contigs()))
