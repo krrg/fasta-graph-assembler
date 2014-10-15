@@ -4,8 +4,8 @@ import sys
 class ContigMetrics:
 
     def __init__(self, contigs):
-        self.contigs = sorted(contigs)
-        self.contig_lengths = map(len, self.contigs)
+        self.contigs = sorted(contigs, key=len)
+        self.contig_lengths = sorted(map(len, self.contigs))
 
     def mean_contig_size(self):
         return sum(self.contig_lengths) / float(len(self.contigs))

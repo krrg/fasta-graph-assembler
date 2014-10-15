@@ -2,6 +2,7 @@ __author__ = 'krr428'
 
 import fasta_reader
 import seq_splitter
+import metrics
 from debruijn import DeBruijnGraph
 from collections import defaultdict
 import sys
@@ -33,14 +34,26 @@ def write_output_file(contigs_result, filename):
 if __name__ == "__main__":
 
     fasta_sequences = fasta_reader.read_input_file(sys.argv[1] if len(sys.argv) > 1 else "example.data.fasta")
-    klen = int(sys.argv[2])
+    # klen = int(sys.argv[2])
 
-    complete_kmer_list = fasta_to_kmers(fasta_sequences, klen)
-    supported_kmers = get_frequent_kmers(complete_kmer_list, 2)
+    best_klen = {}
 
-    contigs_result = DeBruijnGraph(set(supported_kmers)).read_all_contigs()
-    contigs_result = sorted(contigs_result, key=lambda contig: len(contig))
+    for klen in xrange(10, 80):
+        complete_kmer_list = fasta_to_kmers(fasta_sequences, klen)
+        supported_kmers = get_frequent_kmers(complete_kmer_list, 2)
 
-    output_filename = determine_out_file(sys.argv[1], klen)
-    write_output_file(contigs_result, output_filename)
-    print "Output written to", output_filename
+        contigs_result = DeBruijnGraph(set(supported_kmers)).read_all_contigs()
+        contigs_result = sorted(contigs_result, key=lambda contig: len(contig))
+
+        metric = metrics.ContigMetrics(contigs_result)
+
+        print "\t".join(map(str, [
+             "klen %d :" % klen,
+             metric.mean_contig_size(),
+             metric.largest_contig_size(),
+             metric.n_50(),
+             metric.total_contigs()
+        ]))
+        # output_filename = determine_out_file(sys.argv[1], klen)
+        # write_output_file(contigs_result, output_filename)
+        # print "Output written to", output_filename
