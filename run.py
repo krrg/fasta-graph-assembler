@@ -43,11 +43,9 @@ if __name__ == "__main__":
     # chart.add('Largest Contig', [x[2] for x in totals])
     # chart.render_to_file("outputs/kmer_length_comparison.svg")
 
-    complete_kmer_list = fasta_to_kmers(fasta_sequences, klen)
-    supported_kmers = get_frequent_kmers(complete_kmer_list, 2)
 
-    contigs_result = DeBruijnGraph(set(supported_kmers)).read_all_contigs()
-    contigs_result = sorted(contigs_result, key=lambda contig: len(contig))
+
+
 
     output_filename = determine_out_file(sys.argv[1], klen)
     write_output_file(contigs_result, output_filename)

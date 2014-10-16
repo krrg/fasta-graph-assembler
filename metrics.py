@@ -22,6 +22,23 @@ class ContigMetrics:
             templist.extend([contig_len]*contig_len)
         return templist[len(templist) / 2]
 
+    def __str__(self):
+        str_lines = [
+            "Average (mean) contig size:",
+            self.mean_contig_size(),
+            '',
+            "N-50:",
+            self.n_50(),
+            '',
+            'Total contigs generated:',
+            self.total_contigs(),
+            '',
+            'Largest contig size:',
+            self.largest_contig_size(),
+            ''
+        ]
+        return '\n'.join(map(str, str_lines))
+
 
 def read_input_file(filename):
     with open(filename) as f:
@@ -33,16 +50,5 @@ if __name__ == "__main__":
     
     metrics = ContigMetrics(lines)
 
-    print "Average (mean) contig size:"
-    print metrics.mean_contig_size()
-    print
-    print "N-50:"
-    print metrics.n_50()
-    print
-    print "Total contigs generated:"
-    print metrics.total_contigs()
-    print
-    print "Largest contig size:"
-    print metrics.largest_contig_size()
-    print
+    print str(metrics)
 
