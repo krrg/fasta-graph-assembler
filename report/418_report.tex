@@ -1,0 +1,38 @@
+\documentclass[12pt]{article}
+
+\title{De Bruijn Graph Assembler}
+\author{Kevin Boehme \and Shaun Miller \and Ken Reese}
+
+\begin{document}
+\maketitle
+
+\section{Methodology}
+Our error handling approach was quite simple. Once the reads were read in from the FASTA format and our algorithm broke them into the specified kmer length, we traversed the list of kmers looking for kmers that only appeared once. This effectively checked the support for each kmer in our list. If a kmer was found only once it would suggest a genotyping error and as such would be thrown out. If on the other hand, the kmer was supported multiple times, this suggests that it was correctly genotyped and was subsequently kept.  Our algorithm currently does not attempt to bridge non-branching nodes.
+
+\section{Quality Analysis}
+In order to analyze the quality of our assembly we relied on a few, informative metrics including average contig size, N50, number of contigs, and the maximum contig size. These metrics a provided a solid foundation for determining the quality of our assembly as we adjusted the kmer length as well as providing a tractable means of comparing our assembly to other De Bruijn graph assemblers (such as Velvet).
+
+\begin{center}
+
+\subsubsection*{Real Dataset, Small, klen = 42\footnote{}
+
+\begin{tabular}{rl} \hline
+Mean contig size: & 382 \\
+N50: & 1015 \\
+Number of Contigs & 3\\
+Largest Contig Size & 1015\\
+\end{tabular}
+
+\end{center}
+
+\section{Comparison}
+
+\section{BLAST Results}
+
+\section{Assembler Improvements}
+
+\section*{Appendix A --- Charts}
+
+\section*{Appendix B --- Notes}
+
+\end{document}

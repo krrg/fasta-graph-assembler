@@ -1,0 +1,12 @@
+Average (mean) contig size:
+382.0
+
+N-50:
+1015
+
+Total contigs generated:
+3
+
+Largest contig size:
+1015
+
