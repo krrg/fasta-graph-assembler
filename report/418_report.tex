@@ -14,13 +14,22 @@ In order to analyze the quality of our assembly we relied on a few, informative 
 
 \begin{center}
 
-\subsubsection*{Real Dataset, Small, klen = 42\footnote{}
+\subsubsection*{Real Dataset, Small, klen = 42}
 
 \begin{tabular}{rl} \hline
 Mean contig size: & 382 \\
 N50: & 1015 \\
-Number of Contigs & 3\\
-Largest Contig Size & 1015\\
+Number of Contigs: & 3\\
+Largest Contig Size: & 1015\\
+\end{tabular}
+
+\subsubsection*{Real Dataset, Large, klen = 57}
+
+\begin{tabular}{rl} \hline
+Mean contig size: & 149.513 \\
+N50: &  232\\
+Number of Contigs: & 251\\
+Largest Contig Size: & 1558\\
 \end{tabular}
 
 \end{center}
@@ -31,7 +40,63 @@ Largest Contig Size & 1015\\
 
 \section{Assembler Improvements}
 
-\section*{Appendix A --- Charts}
+\section*{Appendix A --- Charts and Tables}
+\begin{table}
+\begin{tabular}{|l|l|l|l|}
+\hline
+Kmer Size &Number of Contigs &N50 &Max Length\\\hline
+10 &15122 &2 &36 \\
+11 &7510 &10 &91 \\
+12 &7510 &10 &91 \\
+13 &2669 &31 &235 \\
+14 &2669 &31 &235 \\
+15 &1479 &63 &732 \\
+16 &1479 &63 &732 \\
+17 &1137 &76 &1112 \\
+18 &1137 &76 &1112 \\
+19 &1021 &84 &1275 \\
+20 &1021 &84 &1275 \\
+21 &872 &103 &1275 \\
+22 &872 &103 &1275 \\
+23 &776 &112 &884 \\
+24 &776 &112 &884 \\
+25 &645 &135 &1279 \\
+26 &645 &135 &1279 \\
+27 &521 &239 &1474 \\
+28 &521 &239 &1474 \\
+29 &456 &237 &1474 \\
+30 &456 &237 &1474 \\
+31 &347 &374 &\textbf{1477}\\\hline
+\end{tabular}
+\end{table}
+
+\begin{table}
+\begin{tabular}{|l|l|l|l|} \hline
+Kmer Size &Number of Contigs &N50 &Max Length\\\hline
+10 & 7170 & 11 & 73 \\
+11 & 3879 & 15 & 136 \\
+12 & 2285 & 23 & 211 \\
+13 & 1554 & 31 & 432 \\
+14 & 1227 & 41 & 863 \\
+15 & 1068 & 47 & 878 \\
+16 & 962 & 54 & 1326 \\
+17 & 898 & 61 & 1327 \\
+18 & 835 & 71 & 1328 \\
+19 & 789 & 82 & 1329 \\
+20 & 739 & 93 & 1330 \\
+21 & 682 & 103 & 1331 \\
+22 & 645 & 111 & 1332 \\
+23 & 637 & 111 & 1333 \\
+24 & 619 & 114 & 1366 \\
+25 & 592 & 115 & 1368 \\
+26 & 568 & 119 & 1370 \\
+27 & 525 & 144 & 1372 \\
+28 & 504 & 148 & 1374 \\
+29 & 483 & 166 & 1376 \\
+30 & 455 & 177 & 1378 \\
+31 & 424 & 190 & 1380 \\ \hline
+\end{tabular}
+\end{table}
 
 \section*{Appendix B --- Notes}
 
