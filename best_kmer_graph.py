@@ -9,10 +9,12 @@ from pygal.style import BlueStyle
 
 
 def create_metric_chart(points):
-    xy_chart = pygal.XY(style=BlueStyle, x_title='Kmer Length', y_title='Largest Contig', show_legend=False)
-    xy_chart.title = 'Kmer Length vs Largest Contig'
-    xy_chart.add('Largest Contig', points)
-    xy_chart.render_to_file('outputs/chart2.svg')
+
+    xtitle = 'Kmer Length'
+    ytitle = 'N50'
+    xy_chart = pygal.XY(style=BlueStyle, x_title=xtitle, y_title=ytitle, show_legend=False)
+    xy_chart.add('N50', points)
+    xy_chart.render_to_file('outputs/chart4.svg')
 
 
 if __name__ == "__main__":
@@ -24,7 +26,7 @@ if __name__ == "__main__":
     for klen in xrange(2, 100):
         contigs = FastaContigConverter.fasta_to_contigs(reads, klen=klen)
         metrics = ContigMetrics(contigs)
-        points.append((klen, metrics.largest_contig_size()))
+        points.append((klen, metrics.n_50()))
 
     create_metric_chart(points)
 
