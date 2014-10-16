@@ -42,9 +42,6 @@ class DeBruijnGraph:
                 self.incoming[referenced] += 1
 
     def read_contig(self, start):
-        # if not self.is_intermediate_node(start):
-        #     print start, "is not an intermediate node!"
-        #     print start, '->', ','.join(self.nodes[start])
         if not self.is_intermediate_node(start):
             return deque([start])
 
