@@ -9,15 +9,15 @@ from pygal.style import BlueStyle
 
 
 def create_metric_chart(points):
-    xy_chart = pygal.XY(style=BlueStyle)
+    xy_chart = pygal.XY(style=BlueStyle, x_title='Kmer Length', y_title='Largest Contig', show_legend=False)
     xy_chart.title = 'Kmer Length vs Largest Contig'
     xy_chart.add('Largest Contig', points)
-    xy_chart.render_to_file('outputs/chart1.svg')
+    xy_chart.render_to_file('outputs/chart2.svg')
 
 
 if __name__ == "__main__":
 
-    reads = fasta_reader.read_input_file('data/real.error.large.fasta')
+    reads = fasta_reader.read_input_file('data/real.error.small.fasta')
 
     points = []  # XY Coordinates
 
