@@ -10,28 +10,7 @@ import pygal
 from pygal.style import BlueStyle
 
 
-def fasta_to_kmers(fasta_reads, klen):
-    result = []
-    for dnaseq in fasta_reads:
-        kmers = seq_splitter.get_kmers_from(dnaseq, klen)
-        result.extend(kmers)
-    return result
 
-
-def get_frequent_kmers(kmerlist, minimum_freq):
-    frequencies = defaultdict(int)
-    for kmer in complete_kmer_list:
-        frequencies[kmer] += 1
-    return filter(lambda key: frequencies[key] >= minimum_freq, frequencies.iterkeys())
-
-
-def determine_out_file(infilename, klen):
-    return "outputs/" + str(infilename.split('/')[-1]).replace(".fasta", ".{0}.txt".format(klen))
-
-
-def write_output_file(contigs_result, filename):
-    with open(filename, 'w') as f:
-        f.write("\n".join(contigs_result))
 
 if __name__ == "__main__":
 
