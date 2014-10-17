@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.6-1.40.14 (TeX Live 2014/dev) (format=pdflatex 2014.9.5)  16 OCT 2014 18:29
+This is pdfTeX, Version 3.1415926-2.6-1.40.14 (TeX Live 2014/dev) (format=pdflatex 2014.9.5)  16 OCT 2014 18:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -231,7 +231,7 @@ File: klen_vs_largestcontig_large_fasta.png Graphic file (type png)
 <use klen_vs_largestcontig_large_fasta.png>
 Package pdftex.def Info: klen_vs_largestcontig_large_fasta.png used on input li
 ne 175.
-(pdftex.def)             Requested size: 397.48499pt x 270.52496pt.
+(pdftex.def)             Requested size: 379.4175pt x 258.226pt.
 
 <klen_vs_largestcontig_small_fasta.png, id=19, 1023.07219pt x 686.565pt>
 File: klen_vs_largestcontig_small_fasta.png Graphic file (type png)
@@ -239,24 +239,24 @@ File: klen_vs_largestcontig_small_fasta.png Graphic file (type png)
 <use klen_vs_largestcontig_small_fasta.png>
 Package pdftex.def Info: klen_vs_largestcontig_small_fasta.png used on input li
 ne 182.
-(pdftex.def)             Requested size: 397.48499pt x 266.74309pt.
+(pdftex.def)             Requested size: 379.4175pt x 254.61174pt.
 
 <klen_vs_n50_large_fasta.png, id=20, 1032.10594pt x 712.91344pt>
 File: klen_vs_n50_large_fasta.png Graphic file (type png)
 
 <use klen_vs_n50_large_fasta.png>
 Package pdftex.def Info: klen_vs_n50_large_fasta.png used on input line 189.
-(pdftex.def)             Requested size: 397.48499pt x 274.55411pt.
+(pdftex.def)             Requested size: 379.4175pt x 262.07684pt.
 
 <klen_vs_n50_small_fasta.png, id=21, 996.72375pt x 712.91344pt>
 File: klen_vs_n50_small_fasta.png Graphic file (type png)
 
 <use klen_vs_n50_small_fasta.png>
 Package pdftex.def Info: klen_vs_n50_small_fasta.png used on input line 196.
-(pdftex.def)             Requested size: 397.48499pt x 284.30095pt.
+(pdftex.def)             Requested size: 379.4175pt x 271.37769pt.
  [4] [5] [6] [7 <./klen_vs_largestcontig_large_fasta.png> <./klen_vs_largestcon
-tig_small_fasta.png>] [8 <./klen_vs_n50_large_fasta.png>] [9 <./klen_vs_n50_sma
-ll_fasta.png>] (./418_report.aux) ) 
+tig_small_fasta.png>] [8 <./klen_vs_n50_large_fasta.png> <./klen_vs_n50_small_f
+asta.png>] (./418_report.aux) ) 
 Here is how much of TeX's memory you used:
  2001 strings out of 495034
  29225 string characters out of 6181678
@@ -265,16 +265,16 @@ Here is how much of TeX's memory you used:
  8808 words of font info for 31 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  38i,8n,32p,719b,218s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-r17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb>
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb>
-Output written on 418_report.pdf (9 pages, 268908 bytes).
+</usr/share/texlive/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb>
+Output written on 418_report.pdf (8 pages, 268645 bytes).
 PDF statistics:
- 62 PDF objects out of 1000 (max. 8388607)
- 40 compressed objects within 1 object stream
+ 59 PDF objects out of 1000 (max. 8388607)
+ 38 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
